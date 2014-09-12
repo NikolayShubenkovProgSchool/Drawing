@@ -8,43 +8,79 @@
 
 #import "PSRRateView.h"
 
+//#import "UIView+PSRDrawHelpers.h"
+
+CGFloat PSRDegreesToRadians(CGFloat degrees);
+
 @implementation PSRRateView
 
-- (void)setRating:(float)rating
+- (void)setCircleColor:(UIColor *)circleColor
 {
-    if (_rating != rating){
-        _rating = rating;
-        // ни к воем случае не вызывайте этот метод привинтивно
-//        [self draw Rect:self.bound];
-        // используйте вот это:
-        [self setNeedsDisplay];
-    }
+    _circleColor = circleColor;
+    [self setNeedsDisplay];
 }
 
-
-#pragma mark - Setup
+- (void)setup
+{
+    self.circleColor = [UIColor yellowColor];
+    self.lineWidth   = 4;
+    self.rating      = 80;
+}
 
 - (void)awakeFromNib
 {
     [self setup];
 }
 
-- (void)setup
+- (void)drawRect:(CGRect)rect
 {
-    self.lineColor = [UIColor redColor];
+    [self drawRatingInRect:rect];
+    
+    UIBezierPath *roundRectangle = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:CGRectGetWidth(rect) / 20];
+    
+    
+    [[UIColor greenColor] setStroke];
+    
+    roundRectangle.lineWidth = 3;
+    [roundRectangle moveToPoint:CGPointMake(20, 100)];
+    [roundRectangle addLineToPoint:CGPointMake(60, 150)];
+    
+
+    
+    [roundRectangle addArcWithCenter:CGPointMake(40, 50)
+                              radius:80
+                          startAngle:0
+                            endAngle:M_PI
+                           clockwise:YES];
+    
+    [[UIColor blackColor] setFill];
+    
+    [roundRectangle stroke];
+//    [roundRectangle fill];
+    
+    
+    
 }
 
-#pragma mark - Drawing
-
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)drawRatingInRect:(CGRect)rect
+{
+    CGPoint center = CGPointMake(CGRectGetMidX(rect),CGRectGetMidY(rect));
+    
     UIBezierPath *circle = [UIBezierPath bezierPathWithOvalInRect:rect];
-    circle.lineWidth = [self.lineWidth floatValue];
     
-
-    [self.lineColor setStroke];
+    circle = [UIBezierPath bezierPathWithArcCenter:center
+                                            radius:CGRectGetWidth(rect) / 2 - self.lineWidth / 2
+                                        startAngle:-M_PI/2
+                                          endAngle:-M_PI/2 + 2 * M_PI * (self.rating) / 100
+                                         clockwise:YES];
+    
+    circle.lineWidth = self.lineWidth;
+    [self.circleColor setStroke];
+    [[UIColor orangeColor] setFill];
+    
     [circle stroke];
-    
+    [circle fill];
+
 }
 
 @end

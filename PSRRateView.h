@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+IB_DESIGNABLE
+
 @interface PSRRateView : UIView
-@property (nonatomic) float rating;
-@property (nonatomic, strong) UIColor *lineColor;
-@property (nonatomic) NSNumber *lineWidth;
+
+@property (nonatomic)  IBInspectable CGFloat lineWidth;
+//0 - 100
+@property (nonatomic) IBInspectable CGFloat rating;
+@property (nonatomic) IBInspectable UIColor *circleColor;
+
+
 @end
