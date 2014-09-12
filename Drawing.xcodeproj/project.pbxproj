@@ -13,6 +13,8 @@
 		FE84D30919C33A5A00AF2CEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE84D30719C33A5A00AF2CEE /* Main.storyboard */; };
 		FE84D30B19C33A5A00AF2CEE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE84D30A19C33A5A00AF2CEE /* Images.xcassets */; };
 		FE84D31719C33A5A00AF2CEE /* DrawingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE84D31619C33A5A00AF2CEE /* DrawingTests.m */; };
+		FE84D32519C33AC700AF2CEE /* UIView+PSRDrawHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = FE84D32419C33AC700AF2CEE /* UIView+PSRDrawHelpers.m */; };
+		FEBDA46319C359AE00E34388 /* PSRRateView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBDA46219C359AE00E34388 /* PSRRateView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,10 @@
 		FE84D31019C33A5A00AF2CEE /* DrawingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE84D31519C33A5A00AF2CEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE84D31619C33A5A00AF2CEE /* DrawingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawingTests.m; sourceTree = "<group>"; };
+		FE84D32319C33AC700AF2CEE /* UIView+PSRDrawHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PSRDrawHelpers.h"; sourceTree = "<group>"; };
+		FE84D32419C33AC700AF2CEE /* UIView+PSRDrawHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PSRDrawHelpers.m"; sourceTree = "<group>"; };
+		FEBDA46119C359AE00E34388 /* PSRRateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSRRateView.h; path = ../PSRRateView.h; sourceTree = "<group>"; };
+		FEBDA46219C359AE00E34388 /* PSRRateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSRRateView.m; path = ../PSRRateView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +85,14 @@
 		FE84D2FC19C33A5A00AF2CEE /* Drawing */ = {
 			isa = PBXGroup;
 			children = (
+				FEBDA46119C359AE00E34388 /* PSRRateView.h */,
+				FEBDA46219C359AE00E34388 /* PSRRateView.m */,
 				FE84D30119C33A5A00AF2CEE /* AppDelegate.h */,
 				FE84D30219C33A5A00AF2CEE /* AppDelegate.m */,
 				FE84D30419C33A5A00AF2CEE /* ViewController.h */,
 				FE84D30519C33A5A00AF2CEE /* ViewController.m */,
+				FE84D32319C33AC700AF2CEE /* UIView+PSRDrawHelpers.h */,
+				FE84D32419C33AC700AF2CEE /* UIView+PSRDrawHelpers.m */,
 				FE84D30719C33A5A00AF2CEE /* Main.storyboard */,
 				FE84D30A19C33A5A00AF2CEE /* Images.xcassets */,
 				FE84D2FD19C33A5A00AF2CEE /* Supporting Files */,
@@ -215,9 +225,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE84D32519C33AC700AF2CEE /* UIView+PSRDrawHelpers.m in Sources */,
 				FE84D30619C33A5A00AF2CEE /* ViewController.m in Sources */,
 				FE84D30319C33A5A00AF2CEE /* AppDelegate.m in Sources */,
 				FE84D30019C33A5A00AF2CEE /* main.m in Sources */,
+				FEBDA46319C359AE00E34388 /* PSRRateView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +416,7 @@
 				FE84D31C19C33A5A00AF2CEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FE84D31D19C33A5A00AF2CEE /* Build configuration list for PBXNativeTarget "DrawingTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +425,7 @@
 				FE84D31F19C33A5A00AF2CEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
