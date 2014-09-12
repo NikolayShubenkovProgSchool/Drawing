@@ -11,12 +11,12 @@
 @implementation UIView (PSRDrawHelpers)
 
 
-- (void)psr_pushContextAndRotateUpsideDown
+- (void)psr_pushContext
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
-    CGContextTranslateCTM(context, self.bounds.size.width, self.bounds.size.height);
-    CGContextRotateCTM(context, M_PI);
+//    CGContextTranslateCTM(context, self.bounds.size.width, self.bounds.size.height);
+//    CGContextRotateCTM(context, M_PI);
 }
 
 - (void)psr_popContext

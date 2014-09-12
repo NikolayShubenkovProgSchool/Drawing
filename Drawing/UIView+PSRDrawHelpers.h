@@ -10,7 +10,7 @@
 
 @interface UIView (PSRDrawHelpers)
 
-- (void)psr_pushContextAndRotateUpsideDown;
+- (void)psr_pushContext;
 - (void)psr_popContext;
 
 @end
