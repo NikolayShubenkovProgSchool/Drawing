@@ -28,10 +28,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="movingResisingView" destination="GRZ-YY-b0B" id="1YQ-9k-Ieh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="243" y="322"/>
+            <point key="canvasLocation" x="142" y="322"/>
         </scene>
     </scenes>
 </document>
