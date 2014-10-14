@@ -11,6 +11,7 @@
 @interface UIView (PSRDrawHelpers)
 
 - (void)psr_pushContext;
+- (void)psr_flipContext;
 - (void)psr_popContext;
 
 @end

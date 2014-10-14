@@ -42,13 +42,15 @@ CGFloat PSRDegreesToRadians(CGFloat degrees);
     [[UIColor redColor] setStroke];
     
     [self drawRatingInRect:rect];
+    {
     
         [self psr_pushContext];
     
         [[UIColor greenColor] setStroke];
         [self drawRoundRectInRect:rect];
     
-        [self psr_popContext];
+    }
+    [self psr_popContext];
     
     [self drawTriangle];
     

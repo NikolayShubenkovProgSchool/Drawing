@@ -54,6 +54,8 @@
             //do nothing
             break;
     }
+    
+    
 }
 
 - (void)gesturePinched:(UIPinchGestureRecognizer *)pinchGesture

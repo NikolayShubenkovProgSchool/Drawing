@@ -15,8 +15,13 @@
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
-//    CGContextTranslateCTM(context, self.bounds.size.width, self.bounds.size.height);
-//    CGContextRotateCTM(context, M_PI);
+}
+
+- (void)psr_flipContext
+{
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextTranslateCTM(context, self.bounds.size.width, self.bounds.size.height);
+    CGContextRotateCTM(context, M_PI);
 }
 
 - (void)psr_popContext
